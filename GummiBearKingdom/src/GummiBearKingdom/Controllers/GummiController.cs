@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using GummiBearKingdom.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace GummiBearKingdom.Controllers
 {
     public class GummiController : Controller
     {
-        // GET: /<controller>/
+        private GummiKingdomDbContext db = new GummiKingdomDbContext();
         public IActionResult Index()
         {
-            return View();
+            return View(db.Gummis.ToList());
         }
     }
 }

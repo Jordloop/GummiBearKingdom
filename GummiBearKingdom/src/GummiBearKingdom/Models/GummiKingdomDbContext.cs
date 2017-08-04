@@ -12,7 +12,7 @@ namespace GummiBearKingdom.Models
         {
         }
 
-        public DbSet<Gummi> Gummi { get; set; }
+        public DbSet<Gummi> Gummis { get; set; }
         //public DbSet<Review> Review { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
@@ -20,14 +20,6 @@ namespace GummiBearKingdom.Models
             options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=GummiBearKingdom;integrated security=True");
         }
 
-        public GummiKingdomDbContext(DbContextOptions<GummiKingdomDbContext> options)
-            : base(options)
-        {
-        }
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
-        }
     }
 }
